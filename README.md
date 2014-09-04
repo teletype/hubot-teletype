@@ -1,7 +1,7 @@
-# hubot-slack
+# hubot-teletype
 
-This is a [Hubot](http://hubot.github.com/) adapter to use with [Slack](https://slack.com).  
-[![Build Status](https://travis-ci.org/tinyspeck/hubot-slack.png)](https://travis-ci.org/tinyspeck/hubot-slack)
+This is a [Hubot](http://hubot.github.com/) adapter to use with [Teletype](http://app.teletype.io).  
+[![Build Status](https://travis-ci.org/teletype/hubot-teletype.png)](https://travis-ci.org/teletype/hubot-teletype)
 
 ## Getting Started
 
@@ -10,7 +10,7 @@ This is a [Hubot](http://hubot.github.com/) adapter to use with [Slack](https://
 - `npm install -g hubot coffee-script`
 - `hubot --create [path_name]`
 - `cd [path_name]`
-- `npm install hubot-slack --save`
+- `npm install hubot-teletype --save`
 - Initialize git and make your initial commit
 - Check out the [hubot docs](https://github.com/github/hubot/tree/master/docs) for further guidance on how to build your bot
 
@@ -22,21 +22,26 @@ This is a [Hubot](http://hubot.github.com/) adapter to use with [Slack](https://
 
 This is a modified set of instructions based on the [instructions on the Hubot wiki](https://github.com/github/hubot/blob/master/docs/deploying/heroku.md).
 
-- Make sure `hubot-slack` is in your `package.json` dependencies
+- Make sure `hubot-teletype` is in your `package.json` dependencies
 - Edit your `Procfile` and change it to use the `slack` adapter:
 
-        web: bin/hubot --adapter slack
+        web: bin/hubot --adapter teletype
 
 - Install [heroku toolbelt](https://toolbelt.heroku.com/) if you haven't already.
-- `heroku create my-company-slackbot`
+- `heroku create my-bot-name`
 - `heroku addons:add redistogo:nano`
-- Activate the Hubot service on your ["Team Services"](http://my.slack.com/services/new/hubot) page inside Slack.
+
+- Activate the Hubot service on your ["Team Services"](http://my.slack.com/services/new/hubot) page inside Slack. (*FIX*)
+
 - Add the [config variables](#adapter-configuration). For example:
 
         % heroku config:add HEROKU_URL=http://soothing-mists-4567.herokuapp.com
-        % heroku config:add HUBOT_SLACK_TOKEN=dqqQP9xlWXAq5ybyqKAU0axG
+
+(        
+		% heroku config:add HUBOT_SLACK_TOKEN=dqqQP9xlWXAq5ybyqKAU0axG
         % heroku config:add HUBOT_SLACK_TEAM=myteam
         % heroku config:add HUBOT_SLACK_BOTNAME=slack-hubot
+)
 
 - Deploy and start the bot:
 
@@ -44,6 +49,8 @@ This is a modified set of instructions based on the [instructions on the Hubot w
         % heroku ps:scale web=1
 
 - Profit!
+
+*FIX*
 
 ## Adapter configuration
 
